@@ -14,8 +14,7 @@ var app = new Vue({
     // var phone_num = 60556045;
 
     var self = this 
-    $.getJSON("./list.json", function (data) { //get data from json
-
+    $.getJSON("./assets/list.json", function (data) { //get data from json
       data.forEach(element => {
         if (element.cand_num_3 == cand_num_3 && element.Phone_num == phone_num) {
           console.log(element);
@@ -30,6 +29,9 @@ var app = new Vue({
         window.location.href = "404/index.html";
       }
       // end if
+    })
+    .fail(function() {
+      window.location.href = "404/index.html";
     });
 
   },
