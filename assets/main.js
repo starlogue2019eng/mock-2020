@@ -24,7 +24,8 @@ var app = new Vue({
       // if data does not match login detail, then go to 404
       if (data.some(candidate => candidate.cand_num_3 == cand_num_3 && candidate.Phone_num ==
         phone_num)) {
-        return true
+        document.querySelector("body").style.removeProperty("visibility");
+        return true;
       } else {
         window.location.href = "404/index.html";
       }
