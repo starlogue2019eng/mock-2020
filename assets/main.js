@@ -8,10 +8,12 @@ var app = new Vue({
     }
   },
   mounted: function () { 
-    var cand_num_3 = prompt("考生編號尾三位數字"); //ask for login detail
-    var phone_num = prompt("電話號碼");
-    // var cand_num_3 = "039";
-    // var phone_num = 60556045;
+    // var cand_num_3 = prompt("考生編號尾三位數字"); //ask for login detail
+    // var phone_num = prompt("電話號碼");
+    // var cand_num_3 = "999";
+    // var phone_num = 92345678;
+    var cand_num_3 = "012";
+    var phone_num = 91611383;
 
     var self = this 
     $.getJSON("./assets/list.json", function (data) { //get data from json

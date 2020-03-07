@@ -7,6 +7,7 @@
   <script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
   <title>按查閱資料要求提供的報告|INFORMATION PROVIDED ON DATA ACCESS REQUEST</title>
 </head>
+
 <body lang=EN-HK>
   <div id="app">
     <div class=WordSection1>
@@ -211,20 +212,26 @@
   padding:0cm 5.4pt 0cm 5.4pt'>
             <p class=MsoNormal align=center style='text-align:center;line-height:115%'><span lang=EN-US>^
                 {{candidate.Paper_2A_M1}} M1</span></p>
-            <p class=MsoNormal align=center style='text-align:center;line-height:115%'><span lang=EN-US>^
+            <p v-if="candidate.Paper_2A_M2 !==''" class=MsoNormal align=center style='text-align:center;line-height:115%'><span lang=EN-US>^
                 {{candidate.Paper_2A_M2}} M2</span></p>
-            <p class=MsoNormal align=center style='text-align:center;line-height:115%'><span lang=EN-US>(out of
-                42)</span></p>
+            <!-- <p class=MsoNormal align=center style='text-align:center;line-height:115%'><span lang=EN-US>(out of 42)</span></p> -->
+            <p v-if="candidate.Paper_2A_M3 !==''" class=MsoNormal align=center style='text-align:center;line-height:115%'><span lang=EN-US>^ {{candidate.Paper_2A_M3}} M3</span></p>
+            <p v-if="candidate.Paper_2A_M3 !==''" class=MsoNormal align=center style='text-align:center;line-height:115%'><span lang=EN-US>(out of 63)</span></p>
+            <p v-else-if="candidate.Paper_2A_M2 !==''" class=MsoNormal align=center style='text-align:center;line-height:115%'><span lang=EN-US>(out of 42)</span></p>
+            <p v-else class=MsoNormal align=center style='text-align:center;line-height:115%'><span lang=EN-US>(out of 21)</span></p>
           </td>
           <td width="18%" colspan=2 style='width:18.42%;border-top:none;border-left:
   none;border-bottom:solid windowtext 1.0pt;border-right:solid windowtext 1.0pt;
   padding:0cm 5.4pt 0cm 5.4pt'>
             <p class=MsoNormal align=center style='text-align:center;line-height:115%'><span lang=EN-US>^
                 {{candidate.Paper_2B_M1}} M1</span></p>
-            <p class=MsoNormal align=center style='text-align:center;line-height:115%'><span lang=EN-US>^
+            <p v-if="candidate.Paper_2B_M2 !==''" class=MsoNormal align=center style='text-align:center;line-height:115%'><span lang=EN-US>^
                 {{candidate.Paper_2B_M2}} M2</span></p>
-            <p class=MsoNormal align=center style='text-align:center;line-height:115%'><span lang=EN-US>(out of
-                42)</span></p>
+            <!-- <p class=MsoNormal align=center style='text-align:center;line-height:115%'><span lang=EN-US>(out of 42)</span></p> -->
+            <p v-if="candidate.Paper_2B_M3 !==''" class=MsoNormal align=center style='text-align:center;line-height:115%'><span lang=EN-US>^ {{candidate.Paper_2B_M3}} M3</span></p>
+            <p v-if="candidate.Paper_2B_M3 !==''" class=MsoNormal align=center style='text-align:center;line-height:115%'><span lang=EN-US>(out of 63)</span></p>
+            <p v-else-if="candidate.Paper_2B_M2 !==''" class=MsoNormal align=center style='text-align:center;line-height:115%'><span lang=EN-US>(out of 42)</span></p>
+            <p v-else class=MsoNormal align=center style='text-align:center;line-height:115%'><span lang=EN-US>(out of 21)</span></p>
           </td>
           <td width="1%" valign=top style='width:1.46%;border:none;padding:0cm 5.4pt 0cm 5.4pt'>
             <p class=MsoNormal align=center style='text-align:center;line-height:115%'><span lang=EN-US>&nbsp;</span>
@@ -273,16 +280,12 @@
   padding:0cm 5.4pt 0cm 5.4pt'>
             <p class=MsoNormal align=center style='text-align:center;line-height:115%'><span
                 lang=EN-US>{{candidate.Paper_1A}}</span></p>
-            <p class=MsoNormal align=center style='text-align:center;line-height:115%'><span lang=EN-US>(out of
-                40)</span></p>
           </td>
           <td width="18%" valign=top style='width:18.42%;border-top:none;border-left:
   none;border-bottom:solid windowtext 1.0pt;border-right:solid windowtext 1.0pt;
   padding:0cm 5.4pt 0cm 5.4pt'>
             <p class=MsoNormal align=center style='text-align:center;line-height:115%'><span
                 lang=EN-US>{{candidate.Paper_1B}}</span></p>
-            <p class=MsoNormal align=center style='text-align:center;line-height:115%'><span lang=EN-US>(out of
-                42)</span></p>
           </td>
           <td width="18%" colspan=2 style='width:18.42%;border-top:none;border-left:
   none;border-bottom:solid windowtext 1.0pt;border-right:solid windowtext 1.0pt;
@@ -311,12 +314,18 @@
           <td width="18%" valign=top style='width:18.98%;border-top:none;border-left:
   none;border-bottom:solid windowtext 1.0pt;border-right:solid windowtext 1.0pt;
   padding:0cm 5.4pt 0cm 5.4pt'>
-            <p class=MsoNormal align=center style='text-align:center;line-height:115%'><span lang=EN-US>10</span></p>
+            <p class=MsoNormal align=center style='text-align:center;line-height:115%'><span
+                lang=EN-US>{{candidate.Paper_1A}}</span></p>
+            <p class=MsoNormal align=center style='text-align:center;line-height:115%'><span lang=EN-US>(out of
+                42)</span></p>
           </td>
           <td width="18%" valign=top style='width:18.42%;border-top:none;border-left:
   none;border-bottom:solid windowtext 1.0pt;border-right:solid windowtext 1.0pt;
   padding:0cm 5.4pt 0cm 5.4pt'>
-            <p class=MsoNormal align=center style='text-align:center;line-height:115%'><span lang=EN-US>20</span></p>
+            <p class=MsoNormal align=center style='text-align:center;line-height:115%'><span
+                lang=EN-US>{{candidate.Paper_1B_Adj}}</span></p>
+            <p class=MsoNormal align=center style='text-align:center;line-height:115%'><span lang=EN-US>(out of
+                47)</span></p>
           </td>
           <td width="18%" colspan=2 style='width:18.42%;border-top:none;border-left:
   none;border-bottom:solid windowtext 1.0pt;border-right:solid windowtext 1.0pt;
@@ -371,8 +380,7 @@
   padding:0cm 5.4pt 0cm 5.4pt'>
             <p class=MsoNormal align=center style='text-align:center;line-height:115%'><span
                 lang=EN-US>{{candidate.Paper_1_Adj}}</span></p>
-            <p class=MsoNormal align=center style='text-align:center;line-height:115%'><span lang=EN-US>(out of
-                164)</span></p>
+            <p class=MsoNormal align=center style='text-align:center;line-height:115%'><span lang=EN-US>(out of 89)</span></p>
           </td>
           <td width="36%" colspan=4 style='width:36.84%;border-top:none;border-left:
   none;border-bottom:solid windowtext 1.0pt;border-right:solid windowtext 1.0pt;
@@ -469,8 +477,7 @@
   border-left:none;border-bottom:solid windowtext 1.0pt;border-right:solid windowtext 1.0pt;
   padding:0cm 5.4pt 0cm 5.4pt'>
             <p class=MsoNormal align=center style='text-align:center;line-height:115%'><span
-                lang=EN-US>{{candidate.Total_score}}
-                (out of 374)</span></p>
+                lang=EN-US>{{candidate.Total_score}} (out of 299)</span></p>
           </td>
           <td width="1%" valign=top style='width:1.46%;border:none;padding:0cm 5.4pt 0cm 5.4pt'>
             <p class=MsoNormal align=center style='text-align:center;line-height:115%'><span lang=EN-US>&nbsp;</span>
@@ -527,9 +534,7 @@
           </td>
           <td width=342 valign=top style='width:256.5pt;padding:0cm 0cm 0cm 0cm'>
             <p class=MsoNormal><span lang=EN-US>^ = </span><span lang=ZH-TW
-                style='font-family:"I\.Ming"'>最接近的</span><span lang=EN-US>2</span><span lang=ZH-TW
-                style='font-family:"I\.Ming"'>個積分</span><span lang=EN-US> Closest
-                pair of marks</span></p>
+                style='font-family:"I\.Ming"'>平均分</span><span lang=EN-US> Average mark</span></p>
           </td>
         </tr>
       </table>
@@ -588,9 +593,12 @@
 
     </div>
 
-    {{message}}
+    <div class="print-btn" style="padding: 1em 0;">
+      {{message}}
+      <button onclick="window.print()">列印本頁 Click to print page</button>
+    </div>
   </div>
-<script src="./assets/main.js"></script>
+  <script src="./assets/main.js"></script>
 </body>
 
 </html>

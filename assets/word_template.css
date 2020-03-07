@@ -42,4 +42,11 @@ div.MsoNormal {
     background-color: #fff;
     overflow: hidden;
   }
+
+}
+
+@media print {
+  .print-btn {
+    display: none;
+  }
 }
