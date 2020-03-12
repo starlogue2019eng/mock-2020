@@ -8,13 +8,19 @@ var app = new Vue({
     }
   },
   mounted: function () { 
-    var cand_num_3 = prompt("考生編號尾三位數字"); //ask for login detail
-    var phone_num = prompt("電話號碼");
-    // var cand_num_3 = "999";
-    // var phone_num = 92345678;
+    // var cand_num_3 = prompt("考生編號尾三位數字"); //ask for login detail
+    // var phone_num = prompt("電話號碼");
+    var cand_num_3 = "999";
+    var phone_num = 92345678;
 
-    var self = this 
-    $.getJSON("./assets/list.json", function (data) { //get data from json
+    var self = this;
+    
+    var stringData = $.ajax({
+      url: "./assets/masterlist.csv",
+      async: false
+    })
+    .done(function(data) {
+      data = Papa.parse(data, {header: true}).data;
       data.forEach(element => {
         if (element.cand_num_3 == cand_num_3 && element.Phone_num == phone_num) {
           console.log(element);
@@ -35,6 +41,7 @@ var app = new Vue({
       window.location.href = "404/index.html";
     });
 
+    
   },
   methods: {
 
